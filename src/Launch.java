@@ -120,8 +120,11 @@ public class Launch {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(33, 74, 717, 157);
 		panel_1.add(scrollPane);
-		
-		table = new JTable(getAllEpisodeData(), getColumnNames());
+    	
+		TableModel tableModel = new DefaultTableModel(getColumnNames(), episodes.size());
+    	table = new JTable(tableModel);
+
+		//table = new JTable(getAllEpisodeData(), getColumnNames());
 		scrollPane.setViewportView(table);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
@@ -162,17 +165,26 @@ public class Launch {
 			    	if (episode.title.contains(textField_2.getText()) || episode.airDate.contains(textField_2.getText()) || episode.season.contains(textField_2.getText()) || episode.episode.contains(textField_2.getText())) {
 			    		search.add(episode);
 			    	}
-			    	Object[][] data = new Object[search.size()][4];
-			    	for (int i = 0; i < search.size(); i++) {
-				    	data[i][0] = search.get(i).season;
-				    	data[i][1] = search.get(i).episode;
-				    	data[i][2] = search.get(i).title;
-				    	data[i][3] = search.get(i).airDate;
-				    }
-			    	DefaultTableModel model = (DefaultTableModel) table.getModel();
-			    	model.setRowCount(0);
-			    	//table = new JTable(data, getColumnNames());
 			    }
+			    Object[][] data = new Object[search.size()][4];
+			    for (int i = 0; i < search.size(); i++) {
+				   	data[i][0] = search.get(i).season;
+				   	data[i][1] = search.get(i).episode;
+				   	data[i][2] = search.get(i).title;
+				   	data[i][3] = search.get(i).airDate;
+				}
+			    DefaultTableModel model = (DefaultTableModel) table.getModel();
+			    	
+			    System.out.println(search.size());
+			    	
+			    int count = model.getRowCount();
+			    for (int i = 0; i < count; i++) {
+				    model.removeRow(0);
+			    }
+				for (int i = 0; i < search.size(); i++) {	
+					System.out.println("In for loop");
+				    model.addRow(new Object[]{search.get(i).season, search.get(i).episode, search.get(i).title, search.get(i).airDate});
+				}			    
 			}
 		});
 		btnSearch.setBounds(633, 36, 117, 29);
@@ -181,6 +193,15 @@ public class Launch {
 		JLabel lblKeyword = new JLabel("Keyword");
 		lblKeyword.setBounds(33, 41, 61, 16);
 		panel_1.add(lblKeyword);
+		
+		JButton btnClearSearch = new JButton("Clear Search");
+		btnClearSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				getAllEpisodeData();
+			}
+		});
+		btnClearSearch.setBounds(263, 243, 238, 29);
+		panel_1.add(btnClearSearch);
 		
 
 		TableColumn column = null;
@@ -198,6 +219,7 @@ public class Launch {
 			public void actionPerformed(ActionEvent e) {
 				panel.show(false);
 				panel_1.show(true);
+		    	getAllEpisodeData();
 			}
 		});
 		
@@ -252,8 +274,9 @@ public class Launch {
 		return columnNames;
 	}
 
-	private Object[][] getAllEpisodeData() {
+	private void getAllEpisodeData() {
 		
+		episodes.clear();
 		episodes.add(new Episode("1", "1", "Simpsons Roasting on an Open Fire", "December 17, 1989"));
 		episodes.add(new Episode("1", "2", "Bart the Genius", "January 14, 1990"));
 		episodes.add(new Episode("1", "3", "Homer's Odyssey", "November 1, 1990"));
@@ -268,17 +291,17 @@ public class Launch {
 	    episodes.add(new Episode("1", "12", "Krusty Gets Busted", "April 29, 1990"));
 	    episodes.add(new Episode("1", "13", 	"Some Enchanted Evening", "May 13, 1990"));
 	    
-	    Object[][] data = new Object[episodes.size()][4];
-	    for (int i = 0; i < episodes.size(); i++) {
-	    	data[i][0] = episodes.get(i).season;
-	    	data[i][1] = episodes.get(i).episode;
-	    	data[i][2] = episodes.get(i).title;
-	    	data[i][3] = episodes.get(i).airDate;
+	    
+    	DefaultTableModel model = (DefaultTableModel) table.getModel();
+	    int count = model.getRowCount();
+	    for (int i = 0; i < count; i++) {
+			model.removeRow(0);
+	    }
+
+    	
+    	
+	    for (int i = 0; i < episodes.size(); i++) {	    	
+	    	model.addRow(new Object[]{episodes.get(i).season, episodes.get(i).episode, episodes.get(i).title, episodes.get(i).airDate});
 	    }			    
-		return data;
 	}
-	
-	
-	
-	
 }
