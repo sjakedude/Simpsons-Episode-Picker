@@ -174,15 +174,12 @@ public class Launch {
 				   	data[i][3] = search.get(i).airDate;
 				}
 			    DefaultTableModel model = (DefaultTableModel) table.getModel();
-			    	
-			    System.out.println(search.size());
-			    	
+			    				    	
 			    int count = model.getRowCount();
 			    for (int i = 0; i < count; i++) {
 				    model.removeRow(0);
 			    }
 				for (int i = 0; i < search.size(); i++) {	
-					System.out.println("In for loop");
 				    model.addRow(new Object[]{search.get(i).season, search.get(i).episode, search.get(i).title, search.get(i).airDate});
 				}			    
 			}
@@ -291,14 +288,11 @@ public class Launch {
 	    episodes.add(new Episode("1", "12", "Krusty Gets Busted", "April 29, 1990"));
 	    episodes.add(new Episode("1", "13", 	"Some Enchanted Evening", "May 13, 1990"));
 	    
-	    
     	DefaultTableModel model = (DefaultTableModel) table.getModel();
 	    int count = model.getRowCount();
 	    for (int i = 0; i < count; i++) {
 			model.removeRow(0);
 	    }
-
-    	
     	
 	    for (int i = 0; i < episodes.size(); i++) {	    	
 	    	model.addRow(new Object[]{episodes.get(i).season, episodes.get(i).episode, episodes.get(i).title, episodes.get(i).airDate});
