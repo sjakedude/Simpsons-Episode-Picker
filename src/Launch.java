@@ -12,6 +12,7 @@ import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
@@ -136,7 +137,12 @@ public class Launch {
 		btnPlaySelectedEpisode.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// TODO: PLAY SELECTED ROW
-				table.getSelectedRow();
+				try {
+					playEpisode(table.getSelectedRow());
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnPlaySelectedEpisode.setBounds(591, 243, 159, 29);
@@ -162,7 +168,7 @@ public class Launch {
 			public void actionPerformed(ActionEvent e) {
 		    	ArrayList<Episode> search = new ArrayList<Episode>();
 			    for (Episode episode : episodes) {
-			    	if (episode.title.contains(textField_2.getText()) || episode.airDate.contains(textField_2.getText()) || episode.season.contains(textField_2.getText()) || episode.episode.contains(textField_2.getText())) {
+			    	if (episode.title.toLowerCase().contains(textField_2.getText().toLowerCase()) || episode.airDate.toLowerCase().contains(textField_2.getText().toLowerCase()) || episode.season.toLowerCase().contains(textField_2.getText().toLowerCase()) || episode.episode.toLowerCase().contains(textField_2.getText().toLowerCase())) {
 			    		search.add(episode);
 			    	}
 			    }
@@ -273,11 +279,8 @@ public class Launch {
 
 	private void getAllEpisodeData() {
 		
-		
 		Populator p = new Populator();
-		ArrayList<Episode> episodes = p.run();
-		
-		
+		episodes = p.run();
 	    
     	DefaultTableModel model = (DefaultTableModel) table.getModel();
 	    int count = model.getRowCount();
@@ -289,4 +292,15 @@ public class Launch {
 	    	model.addRow(new Object[]{episodes.get(i).season, episodes.get(i).episode, episodes.get(i).title, episodes.get(i).airDate});
 	    }			    
 	}
+	
+	private void playEpisode(int index) throws IOException {
+		String ep = "s" + table.getModel().getValueAt(index, 0) + "e" + table.getModel().getValueAt(index, 1);
+		System.out.println(ep);
+			
+	    Process p = Runtime.getRuntime().exec("sh /Users/jake/Documents/workspace/Simpsons/src/play.sh /Users/jake/Downloads/s1e3.mp4");
+
+		//ProcessBuilder pb = new ProcessBuilder("/Users/jake/Documents/workspace/Simpsons/src/play.sh", "/Users/jake/Downloads/s1e3.mp4");
+		//Process p = pb.start();
+	}
+
 }

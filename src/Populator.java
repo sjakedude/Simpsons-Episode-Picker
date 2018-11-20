@@ -672,7 +672,7 @@ public class Populator {
         episodes.add(new Episode("29", "19", "Left Behind", "May 6, 2018"));
         episodes.add(new Episode("29", "20", "Throw Grampa from the Dane", "May 13, 2018"));
         episodes.add(new Episode("29", "21", "Flanders' Ladder", "May 20, 2018"));
-    
+    /*
         episodes.add(new Episode("30", "1", "Bart's Not Dead", "September 30, 2018"));
         episodes.add(new Episode("30", "2", "Heartbreak Hotel", "October 7, 2018"));
         episodes.add(new Episode("30", "3", "My Way or the Highway to Heaven", "October 14, 2018"));

@@ -1,3 +1,4 @@
 FILE=${1}
-APP=${2}
-open -a ${APP} ${FILE}
+#open -a .data/MKPlayer/MacOS/MKPlayer ${FILE}
+
+open -a /Users/jake/Desktop/Test Simpsons/.data/MKPlayer/MacOS/MKPlayer ${FILE}
