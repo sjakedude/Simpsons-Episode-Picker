@@ -273,20 +273,11 @@ public class Launch {
 
 	private void getAllEpisodeData() {
 		
-		episodes.clear();
-		episodes.add(new Episode("1", "1", "Simpsons Roasting on an Open Fire", "December 17, 1989"));
-		episodes.add(new Episode("1", "2", "Bart the Genius", "January 14, 1990"));
-		episodes.add(new Episode("1", "3", "Homer's Odyssey", "November 1, 1990"));
-		episodes.add(new Episode("1", "4", "There's No Disgrace Like Home", "January 28, 1990"));
-		episodes.add(new Episode("1", "5", "Bart the General", "February 4, 1990"));
-		episodes.add(new Episode("1", "6", "Moaning Lisa", "February 11, 1990"));
-	    episodes.add(new Episode("1", "7", "The Call of the Simpsons", "February 18, 1990"));
-	    episodes.add(new Episode("1", "8", "The Telltale Head", "February 25, 1990"));
-	    episodes.add(new Episode("1", "9", "Life on the Fast Lane", "March 18, 1990"));
-	    episodes.add(new Episode("1", "10", "Homer's Night Out", "March 25, 1990"));
-	    episodes.add(new Episode("1", "11", "The Crepes of Wrath", "April 15, 1990"));
-	    episodes.add(new Episode("1", "12", "Krusty Gets Busted", "April 29, 1990"));
-	    episodes.add(new Episode("1", "13", 	"Some Enchanted Evening", "May 13, 1990"));
+		
+		Populator p = new Populator();
+		ArrayList<Episode> episodes = p.run();
+		
+		
 	    
     	DefaultTableModel model = (DefaultTableModel) table.getModel();
 	    int count = model.getRowCount();
