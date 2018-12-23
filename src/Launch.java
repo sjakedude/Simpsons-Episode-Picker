@@ -21,6 +21,7 @@ import java.util.Map;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import java.awt.Font;
 
 public class Launch {
 
@@ -32,6 +33,7 @@ public class Launch {
 	private JTable table_1;
 	ArrayList<Episode> episodes = new ArrayList<Episode>();
 	ArrayList<Episode> favorites = new ArrayList<Episode>();
+	private JTextField txtHttpsgithubcomsjakedudesimpsonsepisodepickertreemastersrc;
 	
 	/**
 	 * Launch the application.
@@ -61,7 +63,8 @@ public class Launch {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 780, 302);
+	//	frame.setBounds(100, 100, 783, 305);
+		frame.setBounds(100, 100, 1000, 610);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
 		
@@ -121,7 +124,7 @@ public class Launch {
 		        }
 			}
 		});
-		btnNewButton.setBounds(570, 164, 186, 96);
+		btnNewButton.setBounds(729, 414, 210, 106);
 		panel.add(btnNewButton);
 				
 		JPanel panel_2 = new JPanel();
@@ -162,26 +165,26 @@ public class Launch {
 				populateFavoritesTable();
 			}
 		});
-		btnNewButton_1.setBounds(570, 52, 186, 96);
+		btnNewButton_1.setBounds(729, 82, 210, 106);
 		panel.add(btnNewButton_1);
 		
 		textField = new JTextField();
-		textField.setBounds(41, 198, 40, 26);
+		textField.setBounds(90, 376, 40, 26);
 		panel.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblS = new JLabel("S");
-		lblS.setBounds(31, 203, 23, 16);
+		lblS.setBounds(55, 381, 23, 16);
 		panel.add(lblS);
 		
 		JLabel lblE = new JLabel("E");
-		lblE.setBounds(114, 203, 23, 16);
+		lblE.setBounds(182, 381, 23, 16);
 		panel.add(lblE);
 		
 		
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(124, 198, 40, 26);
+		textField_1.setBounds(224, 376, 40, 26);
 		panel.add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -199,15 +202,17 @@ public class Launch {
 				}
 			}
 		});
-		btnNewButton_2.setBounds(31, 231, 133, 29);
+		btnNewButton_2.setBounds(54, 414, 210, 106);
 		panel.add(btnNewButton_2);
 		
 		JLabel lblPlaySpecificEpisode = new JLabel("Play Specific Episode");
-		lblPlaySpecificEpisode.setBounds(30, 164, 134, 16);
+		lblPlaySpecificEpisode.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+		lblPlaySpecificEpisode.setBounds(48, 309, 269, 38);
 		panel.add(lblPlaySpecificEpisode);
 		
 		JLabel lblTheSimpsonsEpisode = new JLabel("The Simpsons Episode Picker");
-		lblTheSimpsonsEpisode.setBounds(293, 6, 210, 16);
+		lblTheSimpsonsEpisode.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+		lblTheSimpsonsEpisode.setBounds(305, 18, 417, 38);
 		panel.add(lblTheSimpsonsEpisode);
 		
 		JPanel panel_1 = new JPanel();
@@ -215,7 +220,7 @@ public class Launch {
 		panel_1.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(33, 74, 717, 157);
+		scrollPane.setBounds(33, 94, 918, 447);
 		panel_1.add(scrollPane);
     	
 		TableModel tableModel = new DefaultTableModel(getColumnNames(), episodes.size());
@@ -226,7 +231,8 @@ public class Launch {
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
 		JLabel lblYo = new JLabel("All Episodes");
-		lblYo.setBounds(347, 8, 128, 16);
+		lblYo.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+		lblYo.setBounds(391, 15, 320, 29);
 		panel_1.add(lblYo);
 		
 		JButton btnPlaySelectedEpisode = new JButton("Play Selected Episode");
@@ -241,7 +247,7 @@ public class Launch {
 				}
 			}
 		});
-		btnPlaySelectedEpisode.setBounds(591, 243, 159, 29);
+		btnPlaySelectedEpisode.setBounds(792, 553, 159, 29);
 		panel_1.add(btnPlaySelectedEpisode);
 		
 		JButton btnBack = new JButton("Back");
@@ -251,11 +257,11 @@ public class Launch {
 				panel.show(true);
 			}
 		});
-		btnBack.setBounds(33, 243, 117, 29);
+		btnBack.setBounds(33, 553, 117, 29);
 		panel_1.add(btnBack);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(106, 36, 515, 26);
+		textField_2.setBounds(106, 56, 691, 26);
 		panel_1.add(textField_2);
 		textField_2.setColumns(10);
 		
@@ -286,11 +292,11 @@ public class Launch {
 				}			    
 			}
 		});
-		btnSearch.setBounds(633, 36, 117, 29);
+		btnSearch.setBounds(834, 53, 117, 29);
 		panel_1.add(btnSearch);
 		
 		JLabel lblKeyword = new JLabel("Keyword");
-		lblKeyword.setBounds(33, 41, 61, 16);
+		lblKeyword.setBounds(33, 61, 61, 16);
 		panel_1.add(lblKeyword);
 		
 		JButton btnClearSearch = new JButton("Clear Search");
@@ -299,7 +305,7 @@ public class Launch {
 				getAllEpisodeData();
 			}
 		});
-		btnClearSearch.setBounds(210, 243, 133, 29);
+		btnClearSearch.setBounds(266, 553, 133, 29);
 		panel_1.add(btnClearSearch);
 		
 		JButton btnAddToFavorites = new JButton("Add To Favorites");
@@ -322,7 +328,7 @@ public class Launch {
 				}
 			}
 		});
-		btnAddToFavorites.setBounds(407, 243, 133, 29);
+		btnAddToFavorites.setBounds(534, 553, 133, 29);
 		panel_1.add(btnAddToFavorites);
 		
 
@@ -345,11 +351,13 @@ public class Launch {
 			}
 		});
 		
-		btnNewButton_3.setBounds(24, 52, 163, 96);
+		btnNewButton_3.setBounds(54, 82, 210, 106);
 		panel.add(btnNewButton_3);
 		
+		
 		JLabel lblSpecials = new JLabel("Favorites");
-		lblSpecials.setBounds(373, 6, 72, 16);
+		lblSpecials.setFont(new Font("Lucida Grande", Font.PLAIN, 25));
+		lblSpecials.setBounds(431, 6, 192, 27);
 		panel_2.add(lblSpecials);
 		
 		JButton btnBack_1 = new JButton("Back");
@@ -359,7 +367,7 @@ public class Launch {
 				panel.show(true);
 			}
 		});
-		btnBack_1.setBounds(31, 243, 117, 29);
+		btnBack_1.setBounds(31, 553, 117, 29);
 		panel_2.add(btnBack_1);
 		
 		JButton btnNewButton_4 = new JButton("Remove From Favorites");
@@ -413,7 +421,7 @@ public class Launch {
 				populateFavoritesTable();
 			}
 		});
-		btnNewButton_4.setBounds(288, 243, 185, 29);
+		btnNewButton_4.setBounds(361, 553, 185, 29);
 		panel_2.add(btnNewButton_4);
 		
 		JButton btnPlaySelectedEpisode_1 = new JButton("Play Selected Episode");
@@ -430,16 +438,74 @@ public class Launch {
 				}
 			}
 		});
-		btnPlaySelectedEpisode_1.setBounds(562, 243, 185, 29);
+		btnPlaySelectedEpisode_1.setBounds(781, 553, 185, 29);
 		panel_2.add(btnPlaySelectedEpisode_1);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(31, 34, 716, 197);
+		scrollPane_1.setBounds(31, 45, 935, 495);
 		panel_2.add(scrollPane_1);
 		
 		TableModel tableModel_1 = new DefaultTableModel(getColumnNames(), favorites.size());		
 		table_1 = new JTable(tableModel_1);
 		scrollPane_1.setViewportView(table_1);
+		
+		JPanel panel_3 = new JPanel();
+		frame.getContentPane().add(panel_3, "name_151227120209566");
+		panel_3.setLayout(null);
+		
+		JButton button = new JButton("?");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel.show(false);
+				panel_3.show(true);
+			}
+		});
+		button.setBounds(467, 539, 40, 29);
+		panel.add(button);
+
+		
+		JLabel lblMerryChristmasDad = new JLabel("Merry Christmas Dad. I hope you enjoy this application, it's fully custom made 100% by me.");
+		lblMerryChristmasDad.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		lblMerryChristmasDad.setBounds(21, 17, 958, 74);
+		panel_3.add(lblMerryChristmasDad);
+		
+		JLabel lblItTookMany = new JLabel("It took many many hours to engineer and I am very happy with the result and I hope you are too.\n");
+		lblItTookMany.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		lblItTookMany.setBounds(21, 113, 958, 30);
+		panel_3.add(lblItTookMany);
+		
+		JLabel lblProjectCodeRepository = new JLabel("Code Repository: ");
+		lblProjectCodeRepository.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		lblProjectCodeRepository.setBounds(21, 250, 170, 30);
+		panel_3.add(lblProjectCodeRepository);
+		
+		JButton btnBack_2 = new JButton("Back");
+		btnBack_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel_3.show(false);
+				panel.show(true);
+			}
+		});
+		btnBack_2.setBounds(466, 309, 117, 29);
+		panel_3.add(btnBack_2);
+		
+		txtHttpsgithubcomsjakedudesimpsonsepisodepickertreemastersrc = new JTextField();
+		txtHttpsgithubcomsjakedudesimpsonsepisodepickertreemastersrc.setEditable(false);
+		txtHttpsgithubcomsjakedudesimpsonsepisodepickertreemastersrc.setText("https://github.com/sjakedude7/Simpsons-Episode-Picker/tree/master/src");
+		txtHttpsgithubcomsjakedudesimpsonsepisodepickertreemastersrc.setBounds(203, 255, 558, 26);
+		panel_3.add(txtHttpsgithubcomsjakedudesimpsonsepisodepickertreemastersrc);
+		txtHttpsgithubcomsjakedudesimpsonsepisodepickertreemastersrc.setColumns(10);
+		
+		TableColumn column_1 = null;
+		for (int i = 0; i < 3; i++) {
+		    column_1 = table_1.getColumnModel().getColumn(i);
+		    if (i == 0 || i == 1) {
+		        column_1.setPreferredWidth(1);
+		    } else {
+		        column_1.setPreferredWidth(300);
+		    }
+		}
+
 		
 		getAllEpisodeData();
 	}
