@@ -5,7 +5,7 @@ public class Populator {
 		
 		ArrayList<Episode> episodes = new ArrayList<Episode>();
 		
-		episodes.add(new Episode("1", "1", "Simpsons Roasting on an Open Fire", "December 17, 1989"));
+	/*	episodes.add(new Episode("1", "1", "Simpsons Roasting on an Open Fire", "December 17, 1989"));
 		episodes.add(new Episode("1", "2", "Bart the Genius", "January 14, 1990"));
 		episodes.add(new Episode("1", "3", "Homer's Odyssey", "November 1, 1990"));
 		episodes.add(new Episode("1", "4", "There's No Disgrace Like Home", "January 28, 1990"));
@@ -17,7 +17,7 @@ public class Populator {
 	    episodes.add(new Episode("1", "10", "Homer's Night Out", "March 25, 1990"));
 	    episodes.add(new Episode("1", "11", "The Crepes of Wrath", "April 15, 1990"));
 	    episodes.add(new Episode("1", "12", "Krusty Gets Busted", "April 29, 1990"));
-	    episodes.add(new Episode("1", "13", "Some Enchanted Evening", "May 13, 1990"));
+	    episodes.add(new Episode("1", "13", "Some Enchanted Evening", "May 13, 1990")); */
 		
 		episodes.add(new Episode("2", "1", "Bart Gets an \"F\"", "October 11, 1990"));
         episodes.add(new Episode("2", "2", "Simpson and Delilah", "October 18, 1990"));
@@ -67,7 +67,7 @@ public class Populator {
         episodes.add(new Episode("3", "23", "Bart's Friend Falls in Love", "May 7, 1992"));
         episodes.add(new Episode("3", "24", "Brother, Can You Spare Two Dimes?", "August 27, 1992"));
     
-        episodes.add(new Episode("4", "1", "Kamp Krusty", "September 24, 1992"));
+    /*    episodes.add(new Episode("4", "1", "Kamp Krusty", "September 24, 1992"));
         episodes.add(new Episode("4", "2", "A Streetcar Named", "October 1, 1992"));
         episodes.add(new Episode("4", "3", "Homer the Heretic", "October 8, 1992"));
         episodes.add(new Episode("4", "4", "Lisa the Beauty Queen", "October 15, 1992"));
@@ -88,7 +88,7 @@ public class Populator {
         episodes.add(new Episode("4", "19", "The Front", "April 15, 1993"));
         episodes.add(new Episode("4", "20", "Whacking Day", "April 29, 1993"));
         episodes.add(new Episode("4", "21", "Marge in Chains", "May 6, 1993"));
-        episodes.add(new Episode("4", "22", "Krusty Gets Kancelled", "May 13, 1993"));
+        episodes.add(new Episode("4", "22", "Krusty Gets Kancelled", "May 13, 1993"));*/
     
         episodes.add(new Episode("5", "1", "Homer's Barbershop Quartet", "September 30, 1993"));
         episodes.add(new Episode("5", "2", "Cape Feare", "October 7, 1993"));
@@ -191,7 +191,7 @@ public class Populator {
         episodes.add(new Episode("8", "24", "The Simpsons Spin-Off Showcase", "May 11, 1997"));
         episodes.add(new Episode("8", "25", "The Secret War of Lisa Simpson", "May 18, 1997"));
         
-        episodes.add(new Episode("9", "1", "The City of New York vs. Homer Simpson", "September 21, 1997"));
+     /*   episodes.add(new Episode("9", "1", "The City of New York vs. Homer Simpson", "September 21, 1997"));
         episodes.add(new Episode("9", "2", "The Principal and the Pauper", "September 28, 1997"));
         episodes.add(new Episode("9", "3", "Lisa's Sax", "October 19, 1997"));
         episodes.add(new Episode("9", "4", "Treehouse of Horror VIII", "October 26, 1997"));
@@ -215,7 +215,7 @@ public class Populator {
         episodes.add(new Episode("9", "22", "Trash of the Titans", "April 26, 1998"));
         episodes.add(new Episode("9", "23", "King of the Hill", "May 3, 1998"));
         episodes.add(new Episode("9", "24", "Lost Our Lisa", "May 10, 1998"));
-        episodes.add(new Episode("9", "25", "Natural Born Kissers", "May 17, 1998"));
+        episodes.add(new Episode("9", "25", "Natural Born Kissers", "May 17, 1998"));*/
     
         episodes.add(new Episode("10", "1", "Lard of the Dance", "August 23, 1998"));
         episodes.add(new Episode("10", "2", "The Wizard of Evergreen Terrace", "September 20, 1998"));
@@ -582,7 +582,7 @@ public class Populator {
         episodes.add(new Episode("25", "21", "Pay Pal", "May 11, 2014"));
         episodes.add(new Episode("25", "22", "The Yellow Badge of Cowardge", "May 18, 2014"));
     
-        episodes.add(new Episode("26", "1", "Clown in the Dumps", "September 28, 2014"));
+ /*       episodes.add(new Episode("26", "1", "Clown in the Dumps", "September 28, 2014"));
         episodes.add(new Episode("26", "2", "The Wreck of the Relationship", "October 5, 2014"));
         episodes.add(new Episode("26", "3", "Super Franchise Me", "October 12, 2014"));
         episodes.add(new Episode("26", "4", "Treehouse of Horror XXV", "October 19, 2014"));
@@ -603,7 +603,7 @@ public class Populator {
         episodes.add(new Episode("26", "19", "The Kids Are All Fight", "April 26, 2015"));
         episodes.add(new Episode("26", "20", "Let's Go Fly a Coot", "May 3, 2015"));
         episodes.add(new Episode("26", "21", "Bull-E", "May 10, 2015"));
-        episodes.add(new Episode("26", "22", "Mathlete's Feat", "May 17, 2015"));
+        episodes.add(new Episode("26", "22", "Mathlete's Feat", "May 17, 2015"));*/
     
         episodes.add(new Episode("27", "1", "Every Man's Dream", "September 27, 2015"));
         episodes.add(new Episode("27", "2", "Cue Detective", "October 4, 2015"));
